@@ -5,7 +5,7 @@ import { getRandomWord, getFarewellText } from "./components/utils";
 import { useState } from "react";
 const AssemblyEndgame = () => {
   // state values
-  const [currentWord] = useState(() => getRandomWord());
+  const [currentWord,setcurrentWord] = useState(() => getRandomWord());
   // console.log(currentWord)
   const [guessedLetters, setGuessedLetters] = useState<string[]>([]);
   // derived values
@@ -93,6 +93,10 @@ const AssemblyEndgame = () => {
 
     return null;
   }
+  function resetGame():void{
+    setcurrentWord(getRandomWord());
+    setGuessedLetters([]);
+  }
   return (
     <main>
       {isGameWon && <Confetti />}
@@ -107,7 +111,7 @@ const AssemblyEndgame = () => {
       <section className="language-chips">{languageElement}</section>
       <section className="word">{latterElements}</section>
       <section className="keyboard">{keyboardElements}</section>
-      <button className="new-game">New Game</button>
+      {isGameOver && <button className="new-game" onClick={resetGame}>New Game</button>}
     </main>
   );
 };
