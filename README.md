@@ -17,7 +17,7 @@ Try to guess the word before running out of attempts! 🚀
 To run locally, follow these steps:
 
 ```sh
-git clone https://github.com/YOUR_USERNAME/Assembly-Endgame.git
+git clone https://github.com/akaza8/Assembly-Endgame.git
 cd Assembly-Endgame
 npm install
 npm run dev
